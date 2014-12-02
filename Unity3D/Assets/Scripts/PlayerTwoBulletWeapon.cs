@@ -27,7 +27,7 @@ public class PlayerTwoBulletWeapon : MonoBehaviour
 		if(mineWeapon == true){ShootMine();}
 		if(missileWeapon == true){ShootMissile();}
 		
-		if(Input.GetKeyDown(KeyCode.Delete))
+		if(Input.GetKeyDown(KeyCode.Keypad1))
 		{	
 			basicWeapon = true; 
 			mineWeapon = false; 
@@ -36,7 +36,7 @@ public class PlayerTwoBulletWeapon : MonoBehaviour
 			canAttackMine = false;
 			canAttackMissile = false;
 		}
-		if(Input.GetKeyDown(KeyCode.End))
+		if(Input.GetKeyDown(KeyCode.Keypad2))
 		{
 			basicWeapon = false; 
 			mineWeapon = true; 
@@ -45,7 +45,7 @@ public class PlayerTwoBulletWeapon : MonoBehaviour
 			canAttackMine = true;
 			canAttackMissile = false;
 		}
-		if(Input.GetKeyDown(KeyCode.PageDown))
+		if(Input.GetKeyDown(KeyCode.Keypad3))
 		{
 			basicWeapon = false; 
 			mineWeapon = false; 
@@ -58,7 +58,7 @@ public class PlayerTwoBulletWeapon : MonoBehaviour
 	
 	void ShootBasic()
 	{
-		if(Input.GetKeyDown(KeyCode.Return) && canAttackBasic)
+		if(Input.GetKeyDown(KeyCode.KeypadEnter) && canAttackBasic)
 		{
 			StartCoroutine("BasicFireDelay");
 		}
@@ -66,7 +66,7 @@ public class PlayerTwoBulletWeapon : MonoBehaviour
 	
 	void ShootMine()
 	{
-		if(Input.GetKeyDown(KeyCode.Return) && canAttackMine && mineAmmo > 0)
+		if(Input.GetKeyDown(KeyCode.KeypadEnter) && canAttackMine && mineAmmo > 0)
 		{
 			StartCoroutine("MineFireDelay");
 		}
@@ -74,7 +74,7 @@ public class PlayerTwoBulletWeapon : MonoBehaviour
 	
 	void ShootMissile()
 	{
-		if(Input.GetKeyDown(KeyCode.Return) && canAttackMissile && missileAmmo > 0)
+		if(Input.GetKeyDown(KeyCode.KeypadEnter) && canAttackMissile && missileAmmo > 0)
 		{
 			StartCoroutine("MissileFireDelay");
 		}
